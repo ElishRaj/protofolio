@@ -1,6 +1,7 @@
 import React from 'react';
+import type { JSX } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiInfo } from 'react-icons/fi';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { FaReact, FaJs, FaChrome } from 'react-icons/fa';
 import { SiD3Dotjs, SiTailwindcss, SiReact, SiReacthookform } from 'react-icons/si';
 
@@ -97,7 +98,7 @@ const ProjectsSection: React.FC = () => {
         </motion.p>
       </div>
 
-      {/* Vertical line container - starts below heading */}
+      {/* Vertical timeline line */}
       <div className="absolute left-1/2 h-[calc(100%-180px)] top-36 bottom-0 transform -translate-x-1/2 z-0 overflow-hidden">
         <motion.div 
           className="w-[3px] h-full bg-gradient-to-b from-blue-600 to-purple-600"
@@ -127,7 +128,7 @@ const ProjectsSection: React.FC = () => {
               }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             >
-              {/* Horizontal connector - only appears when project is in view */}
+              {/* Horizontal connector line */}
               <motion.div
                 className={`hidden md:block absolute top-12 h-[2px] w-1/2 bg-gradient-to-r ${isLeft ? 'left-1/2 from-blue-600 to-transparent' : 'right-1/2 from-transparent to-purple-600'}`}
                 initial={{ width: 0 }}
@@ -154,7 +155,7 @@ const ProjectsSection: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* Project content - alternates left/right */}
+              {/* Project content */}
               <div
                 className={`flex flex-col w-full md:w-[45%] mt-20 md:mt-0 ${
                   isLeft ? 'md:mr-auto md:items-start md:text-left' : 'md:ml-auto md:items-end md:text-right'
